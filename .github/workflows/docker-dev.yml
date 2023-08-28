@@ -9,7 +9,7 @@ on:
         type: choice
         options:
           - main
-          - update
+          - dev
 
 jobs:
   Dev-Image:
