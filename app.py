@@ -30,11 +30,14 @@ def login():
         username = request.form['username']
         password = request.form['password']
         password_hash = get_password(username)
-        print(password_hash)
         if password_hash is not False:
             if bcrypt.check_password_hash(password_hash, password):
                 session['username'] = username
                 return redirect(url_for('dashboard'))
+            else:
+                return redirect(url_for('login', message='Wrong password'))
+        else:
+            return redirect(url_for('login', message='No user found'))
 
     return render_template('login.html')
 
@@ -55,4 +58,4 @@ def logout():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
