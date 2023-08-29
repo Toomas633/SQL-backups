@@ -4,9 +4,9 @@
 
 Automatic SQL dump creator for backup purposes
 
-
 ## Requirements
 
 * Flask
 * bcrypt
 * flask-bcrypt
+* subprocess
