@@ -1,16 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="eng" data-bs-theme="dark">
 <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='icons/sql.svg') }}" />
     <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/login.css') }}" />
 </head>
 <body>
-    <h1>Login</h1>
-    <form method="POST">
-        <label for="username">Username:</label>
-        <input type="text" name="username" required><br><br>
-        <label for="password">Password:</label>
-        <input type="password" name="password" required><br><br>
-        <input type="submit" value="Login">
+    <form class="login" method="POST">
+        <h1>Login</h1>
+        <div class="username">
+            <label for="username">Username:</label>
+            <input type="text" name="username" required>
+        </div>
+        <div class="password">
+            <label for="password">Password:</label>
+            <input type="password" name="password" required>
+        </div>
+        <input class="login-btn" type="submit" value="Login">
     </form>
+    <div id="popup" class="popup-container">
+        <span class="popup-close" onclick="closePopup()">&times;</span>
+        <p id="popup-message"></p>
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/popup.js') }}"></script>
 </body>
 </html>

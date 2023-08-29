@@ -1,0 +1,70 @@
+.login {
+  position: absolute;
+  display: block;
+  background-color: black;
+  padding: 10px 25px;
+  width: 400px;
+  height: 200px;
+  top: calc(50% - 100px);
+  left: calc(50% - 200px);
+  border-radius: 10px;
+  align-items: center;
+}
+
+h1 {
+  color: white;
+}
+
+label {
+  color: lightskyblue;
+}
+
+input {
+  position: absolute;
+  background-color: white;
+  width: 225px;
+  left: 100px;
+  font-size: 18px;
+  height: 20px;
+  border: none;
+  border-radius: 10px;
+}
+
+.username {
+  position: absolute;
+  display: block;
+  top: 65px;
+  left: 25px;
+}
+
+.username input {
+  text-indent: 10px;
+}
+
+.password {
+  position: absolute;
+  display: block;
+  top: 105px;
+  left: 25px;
+  width: 350px;
+}
+
+.password input {
+  text-indent: 10px;
+}
+
+.login-btn {
+  position: absolute;
+  border-radius: 5px;
+  bottom: 20px;
+  left: 125px;
+  height: 35px;
+  background-color: darkslategrey;
+  color: white;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background-color: lightskyblue;
+  color: black;
+}
