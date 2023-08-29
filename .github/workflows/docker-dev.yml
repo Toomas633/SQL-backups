@@ -9,7 +9,7 @@ on:
         type: choice
         options:
           - main
-          - update
+          - dev
 
 jobs:
   Dev-Image:
@@ -40,7 +40,7 @@ jobs:
           context: .
           push: true
           tags: |
-            docker.io/toomas633/fileshare:dev
-            ghcr.io/toomas633/fileshare:dev
+            docker.io/toomas633/sql-backups:dev
+            ghcr.io/toomas633/sql-backups:dev
           labels: |
             org.opencontainers.image.version=dev
