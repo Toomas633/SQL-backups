@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session
 from flask_bcrypt import Bcrypt
 import sqlite3
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='web/')
 app.secret_key = '$2b$12$R0hxaE9n7B.r5ls7UnFBC.tLtsO0h/CrhYyW4kLdeyR5XhTI11Pv.'
 bcrypt = Bcrypt(app)
 
