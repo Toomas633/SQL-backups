@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-color: blue transparent;
+  scrollbar-track-color: transparent;
+  scrollbar-arrow-color: transparent;
+  scrollbar-face-color: blue;
+  scrollbar-shadow-color: transparent;
+  scrollbar-highlight-color: darkblue;
+}
+
+body {
+  background-color: darkslategray;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+*::-webkit-scrollbar,
+*::-webkit-scrollbar-corner,
+*::-webkit-scrollbar-track,
+*::-webkit-scrollbar-button {
+  background-color: transparent;
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track,
+*::-webkit-scrollbar-button {
+  display: none;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: blue;
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: darkblue;
+}
+
+.popup-container {
+  display: none;
+  background-color: darkred;
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.popup-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 28px;
+}
