@@ -10,3 +10,4 @@ Automatic SQL dump creator for backup purposes
 * bcrypt
 * flask-bcrypt
 * subprocess
+* mysql-connector-python
