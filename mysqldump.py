@@ -1,5 +1,6 @@
 import mysql.connector
 from mysql.connector import Error
+import os
 
 # Database configuration
 db_config = {
