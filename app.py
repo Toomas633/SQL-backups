@@ -1,12 +1,19 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 from flask_bcrypt import Bcrypt
+import sqlite3
 
 app = Flask(__name__)
 app.secret_key = '$2b$12$R0hxaE9n7B.r5ls7UnFBC.tLtsO0h/CrhYyW4kLdeyR5XhTI11Pv.'
 bcrypt = Bcrypt(app)
 
-# Simulated user data (replace this with a proper user database)
-users = {'admin': '$2b$12$tHpzFajntiEAF.u8qIPyd.1Wx2.37.gf1TReAOVPLUfRUIj5WnIlK'}
+
+def get_password(username):
+    conn = sqlite3.connect('data.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT password FROM users WHERE user = ?', (username,))
+    password = cursor.fetchone()
+    cursor.close()
+    return password[0] if password else False
 
 
 @app.route('/')
@@ -22,10 +29,12 @@ def login():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-
-        if username in users and bcrypt.check_password_hash(users[username], password):
-            session['username'] = username
-            return redirect(url_for('dashboard'))
+        password_hash = get_password(username)
+        print(password_hash)
+        if password_hash is not False:
+            if bcrypt.check_password_hash(password_hash, password):
+                session['username'] = username
+                return redirect(url_for('dashboard'))
 
     return render_template('login.html')
 
