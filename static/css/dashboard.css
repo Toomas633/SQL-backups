@@ -1,0 +1,44 @@
+.top-bar {
+  background-color: black;
+  color: gold;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  height: 60px;
+}
+
+.logout {
+  position: fixed;
+  cursor: pointer;
+  top: 15px;
+  right: 20px;
+}
+
+.ico-logout {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-image: url("/static/icons/logout.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.settings {
+  position: fixed;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  top: 12.5px;
+  right: 70px;
+}
+
+.ico-settings {
+  content: "";
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-image: url("/static/icons/settings.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
