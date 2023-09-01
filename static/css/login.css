@@ -24,7 +24,6 @@ input {
   background-color: white;
   width: 225px;
   left: 100px;
-  font-size: 18px;
   height: 20px;
   border: none;
   border-radius: 10px;
@@ -39,6 +38,7 @@ input {
 
 .username input {
   text-indent: 10px;
+  font-size: 16px;
 }
 
 .password {
@@ -51,12 +51,14 @@ input {
 
 .password input {
   text-indent: 10px;
+  font-size: 24px;
 }
 
 .login-btn {
   position: absolute;
   border-radius: 5px;
   bottom: 20px;
+  font-size: 18px;
   left: 125px;
   height: 35px;
   background-color: darkslategrey;
