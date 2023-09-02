@@ -42,7 +42,6 @@ body {
 
 .popup-container {
   display: none;
-  background-color: darkred;
   color: white;
   border-radius: 10px;
   padding: 20px;
@@ -57,4 +56,12 @@ body {
   right: 20px;
   cursor: pointer;
   font-size: 28px;
+}
+
+.ico-sql {
+  content: "";
+  display: inline-block;
+  background-image: url("/static/icons/sql.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
 }

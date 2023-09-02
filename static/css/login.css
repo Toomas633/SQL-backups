@@ -12,11 +12,11 @@
 }
 
 h1 {
-  color: white;
+  color: gold;
 }
 
 label {
-  color: lightskyblue;
+  color: gold;
 }
 
 input {
@@ -60,12 +60,18 @@ input {
   bottom: 20px;
   left: 125px;
   height: 35px;
-  background-color: darkslategrey;
-  color: white;
+  font-size: 18px;
+  background-color: gold;
+  color: black;
   cursor: pointer;
 }
 
 .login-btn:hover {
-  background-color: lightskyblue;
-  color: black;
+  background-color: darkslategrey;
+  color: gold;
+}
+
+.ico-sql {
+  width: 24px;
+  height: 24px;
 }
