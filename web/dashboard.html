@@ -7,17 +7,48 @@
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="/static/css/base.css" />
     <link rel="stylesheet" type="text/css" href="/static/css/dashboard.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/settings.css" />
   </head>
   <body>
     <header class="top-bar">
       <h1 class="page-name"><i class="ico-sql"></i>Dashboard</h1>
       <a href="/logout" class="logout"><i class="ico-logout"></i></a>
-      <button class="settings" onclick="openSettings()">
+      <button class="settingsBtn" onclick="openSettings()">
         <i class="ico-settings"></i>
       </button>
     </header>
+    <div id="settings" class="settings">
+      <h2><i class="ico-settings"></i>Settings</h2>
+      <form id="passwordForm" class="password-change">
+        <h3 class="page-name">Change password:</h3>
+        <div class="password-input">
+          <label for="currentPassword">Current Password:</label>
+          <input
+            type="password"
+            id="currentPassword"
+            name="currentPassword"
+            required
+          />
+        </div>
+        <div class="password-input">
+          <label for="newPassword">New Password:</label>
+          <input type="password" id="newPassword" name="newPassword" required />
+        </div>
+        <div class="password-input">
+          <label for="confirmPassword">Confirm New Password:</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            required
+          />
+        </div>
+        <button id="passwordChangeBtn" onclick="changePassword()">Change Password</button>
+      </form>
+      <span class="close" onclick="closeSettings()">&times;</span>
+    </div>
     <div id="popup" class="popup-container">
-      <span class="popup-close" onclick="closePopup()">&times;</span>
+      <span class="close" onclick="closePopup()">&times;</span>
       <p id="popup-message"></p>
     </div>
     <script type="text/javascript" src="/static/js/popup.js"></script>
