@@ -41,19 +41,22 @@ body {
 }
 
 .popup-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
   display: none;
   color: white;
   border-radius: 10px;
   padding: 20px;
-  margin: 10px;
+  width: calc(100% - 20px);
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
   z-index: 1000;
 }
 
-.popup-close {
+.close {
   position: absolute;
-  top: 15px;
-  right: 20px;
+  top: 0;
+  right: 10px;
   cursor: pointer;
   font-size: 28px;
 }

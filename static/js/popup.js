@@ -24,7 +24,7 @@ function getParameterByName(name, url) {
 
 let messageFromURL = getParameterByName("message");
 
-if (messageFromURL && document.getElementById("popup-message")) {
+if (messageFromURL) {
   openPopup();
   if (messageFromURL.startsWith("ERROR")) {
     popupMessageElement.textContent = messageFromURL.slice(7);
