@@ -65,3 +65,9 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
 }
+
+input:focus {
+  outline-color: gold;
+  outline-style: inset;
+  outline-width: 4px;
+}

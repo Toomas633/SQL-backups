@@ -34,11 +34,11 @@ input {
   display: block;
   top: 65px;
   left: 25px;
-}
 
-.username input {
-  text-indent: 10px;
-  font-size: 16px;
+  & input {
+    text-indent: 10px;
+    font-size: 16px;
+  }
 }
 
 .password {
@@ -47,11 +47,11 @@ input {
   top: 105px;
   left: 25px;
   width: 350px;
-}
-
-.password input {
-  text-indent: 10px;
-  font-size: 24px;
+  
+  & input {
+    text-indent: 10px;
+    font-size: 24px;
+  }
 }
 
 .login-btn {
@@ -64,11 +64,16 @@ input {
   background-color: gold;
   color: black;
   cursor: pointer;
-}
+  transition: background-color 0.3s ease;
 
-.login-btn:hover {
-  background-color: darkslategrey;
-  color: gold;
+  &:hover {
+    background-color: darkslategrey;
+    color: gold;
+  }
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .ico-sql {
