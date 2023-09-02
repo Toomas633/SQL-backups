@@ -3,26 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="{{ url_for('static', filename='icons/sql.svg') }}"
-    />
+    <link rel="icon" type="image/svg+xml" href="/static/icons/sql.svg" />
     <title>Login</title>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{ url_for('static', filename='css/base.css') }}"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{ url_for('static', filename='css/dashboard.css') }}"
-    />
+    <link rel="stylesheet" type="text/css" href="/static/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/dashboard.css" />
   </head>
   <body>
     <header class="top-bar">
-      <h1 class="page-name"><i class="fas fa-icon"></i>Dashboard</h1>
+      <h1 class="page-name"><i class="ico-sql"></i>Dashboard</h1>
       <a href="/logout" class="logout"><i class="ico-logout"></i></a>
       <button class="settings" onclick="openSettings()">
         <i class="ico-settings"></i>
@@ -32,13 +20,7 @@
       <span class="popup-close" onclick="closePopup()">&times;</span>
       <p id="popup-message"></p>
     </div>
-    <script
-      type="text/javascript"
-      src="{{ url_for('static', filename='js/popup.js') }}"
-    ></script>
-    <script
-      type="text/javascript"
-      src="{{ url_for('static', filename='js/settings.js') }}"
-    ></script>
+    <script type="text/javascript" src="/static/js/popup.js"></script>
+    <script type="text/javascript" src="/static/js/settings.js"></script>
   </body>
 </html>
