@@ -6,7 +6,6 @@ app = Flask(__name__, template_folder='web/')
 app.secret_key = '$2b$12$R0hxaE9n7B.r5ls7UnFBC.tLtsO0h/CrhYyW4kLdeyR5XhTI11Pv.'
 bcrypt = Bcrypt(app)
 
-
 def get_password(username):
     conn = sqlite3.connect('data.db')
     cursor = conn.cursor()
@@ -76,5 +75,36 @@ def change_password():
     else:
         return jsonify({"success": False, "message": "ERROR: Current password invalid"})
 
+@app.route('/get-settings', methods=['POST'])
+def get_settings():
+    try:
+        conn = sqlite3.connect('data.db')
+        cursor = conn.cursor()
+        cursor.execute('SELECT value FROM settings WHERE setting = "dumps"')
+        dumps = cursor.fetchone()
+        cursor.execute('SELECT value FROM settings WHERE setting = "cron"')
+        cron = cursor.fetchone()
+        conn.close()
+        return jsonify({"success": True, "dumps": dumps, "cron": cron})
+    except sqlite3.Error as e:
+        return jsonify({"success": False, "message": e})
+    
+@app.route('/change-settings', methods=['POST'])
+def change_settings():
+    data = request.get_json()
+    dumps = data.get('dumps')
+    cron = data.get('cron')
+    try:
+        conn = sqlite3.connect('data.db')
+        cursor = conn.cursor()
+        cursor.execute('UPDATE settings SET value = ? WHERE setting = "dumps"', (dumps,))
+        conn.commit()
+        cursor.execute('UPDATE settings SET value = ? WHERE setting = "cron"', (cron,))
+        conn.commit()
+        conn.close()
+        return jsonify({"success": True})
+    except sqlite3.Error as e:
+        return jsonify({"success": False, "message": "ERROR: " + e})
+    
 if __name__ == '__main__':
     app.run()
