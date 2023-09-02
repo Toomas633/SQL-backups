@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/static/css/base.css" />
     <link rel="stylesheet" type="text/css" href="/static/css/dashboard.css" />
     <link rel="stylesheet" type="text/css" href="/static/css/settings.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/add.css" />
   </head>
   <body>
     <header class="top-bar">
@@ -17,7 +18,39 @@
         <i class="ico-settings"></i>
       </button>
     </header>
+    <button id="add" class="addBtn" onclick="openAddForm()">
+      <i class="ico-plus"></i>
+    </button>
     <div class="content"></div>
+    <div id="addPopup" class="add-popup">
+      <h2><i class="ico-plus"></i>Add Database</h2>
+      <form id="addForm" class="add-form">
+        <div class="connection-input">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="connection-input">
+          <label for="type">Type:</label>
+          <input type="select" id="type" name="type" required />
+        </div>
+        <div class="connection-input">
+          <label for="address">Address:</label>
+          <input type="text" id="address" name="address" required />
+        </div>
+        <div class="connection-input">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required />
+        </div>
+        <div class="connection-input">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <button id="addConnectionBtn" onclick="addConnection()">
+          Save Connection
+        </button>
+      </form>
+      <span class="close" onclick="closeAddForm()">&times;</span>
+    </div>
     <div id="settings" class="settings">
       <h2><i class="ico-settings"></i>Settings</h2>
       <form id="passwordForm" class="password-change">
@@ -55,6 +88,7 @@
             type="number"
             id="dumps"
             name="dumps"
+            max="99"
             required
             oninput="this.value = this.value.replace(/[^0-9]/g, '');"
           />
@@ -65,6 +99,7 @@
             type="number"
             id="cron"
             name="cron"
+            max="99"
             required
             oninput="this.value = this.value.replace(/[^0-9]/g, '');"
           />
@@ -79,5 +114,6 @@
     </div>
     <script type="text/javascript" src="/static/js/popup.js"></script>
     <script type="text/javascript" src="/static/js/settings.js"></script>
+    <script type="text/javascript" src="/static/js/add.js"></script>
   </body>
 </html>

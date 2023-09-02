@@ -59,6 +59,11 @@ body {
   right: 10px;
   cursor: pointer;
   font-size: 28px;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: red;
+  }
 }
 
 .ico-sql {

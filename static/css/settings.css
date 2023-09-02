@@ -1,12 +1,12 @@
 .settings {
   position: absolute;
   display: none;
-  top: calc(50% - 225px);
+  top: calc(50% - 217.5px);
   left: calc(50% - 250px);
   background-color: black;
   color: gold;
   width: 500px;
-  height: 450px;
+  height: 435px;
   border-radius: 10px;
   padding: 20px;
   padding-top: 10px;
@@ -27,12 +27,12 @@
   }
 
   & .close {
-    position: absolute;
-    display: flex;
     top: 10px;
     right: 20px;
-    cursor: pointer;
-    font-size: 28px;
+
+    &:hover {
+      color: goldenrod;
+    }
   }
 }
 
@@ -146,4 +146,9 @@
     text-indent: 10px;
     font-size: 16px;
   }
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
 }
