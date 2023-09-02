@@ -1,10 +1,13 @@
+const popupMessageElement = document.getElementById("popup-message");
+const popupElement = document.getElementById("popup");
+
 function openPopup() {
-  document.getElementById("popup").style.display = "block";
+  popupElement.style.display = "block";
   setTimeout(closePopup, 3000);
 }
 
 function closePopup() {
-  document.getElementById("popup").style.display = "none";
+  popupElement.style.display = "none";
 }
 
 function getParameterByName(name, url) {
@@ -21,7 +24,13 @@ function getParameterByName(name, url) {
 
 let messageFromURL = getParameterByName("message");
 
-if (messageFromURL) {
-  document.getElementById("popup-message").textContent = messageFromURL;
+if (messageFromURL && document.getElementById("popup-message")) {
   openPopup();
+  if (messageFromURL.startsWith("ERROR")) {
+    popupMessageElement.textContent = messageFromURL.slice(7);
+    popupElement.style.backgroundColor = "darkred";
+  } else {
+    popupMessageElement.textContent = messageFromURL;
+    popupElement.style.backgroundColor = "green";
+  }
 }

@@ -35,9 +35,9 @@ def login():
                 session['username'] = username
                 return redirect(url_for('dashboard'))
             else:
-                return redirect(url_for('login', message='Wrong password'))
+                return redirect(url_for('login', message='ERROR: Wrong password'))
         else:
-            return redirect(url_for('login', message='No user found'))
+            return redirect(url_for('login', message='ERROR: No user found'))
 
     return render_template('login.html')
 
