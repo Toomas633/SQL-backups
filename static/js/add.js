@@ -22,6 +22,7 @@ function addConnection() {
   const name = document.getElementById("name").value;
   const type = document.getElementById("type").value;
   const address = document.getElementById("address").value;
+  const port = document.getElementById("port").value;
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
 
@@ -42,6 +43,7 @@ function addConnection() {
         name: name,
         type: type,
         address: address,
+        port: port,
         username: username,
         password: password,
       }),
