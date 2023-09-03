@@ -31,7 +31,11 @@
         </div>
         <div class="connection-input">
           <label for="type">Type:</label>
-          <input type="select" id="type" name="type" required />
+          <select type="select" id="type" name="type">
+            <option value="mysql">MySQL</option>
+            <option value="postgres">PostgreSQL</option>
+            <option value="mariadb">MariaDB</option>
+          </select>
         </div>
         <div class="connection-input">
           <label for="address">Address:</label>

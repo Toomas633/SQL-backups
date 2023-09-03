@@ -68,22 +68,6 @@ function changePassword() {
     });
 }
 
-function openPopupJS(message) {
-  popupElement.style.display = "block";
-  if (message.startsWith("ERROR")) {
-    popupMessageElement.textContent = message.slice(7);
-    popupElement.style.backgroundColor = "darkred";
-  } else {
-    popupMessageElement.textContent = message;
-    popupElement.style.backgroundColor = "green";
-  }
-  setTimeout(closePopupJS, 3000);
-}
-
-function closePopupJS() {
-  popupElement.style.display = "none";
-}
-
 function getSettings() {
   const dumps = document.getElementById("dumps");
   const cron = document.getElementById("cron");

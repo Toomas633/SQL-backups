@@ -4,6 +4,7 @@
 
 Automatic SQL dump creator for backup purposes
 
+
 ## Requirements
 
 * Flask
@@ -11,3 +12,6 @@ Automatic SQL dump creator for backup purposes
 * flask-bcrypt
 * subprocess
 * mysql-connector-python
+
+
+* mysql client tools

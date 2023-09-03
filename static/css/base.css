@@ -74,7 +74,7 @@ body {
   background-size: contain;
 }
 
-input:focus {
+input:focus, select:focus {
   outline-color: gold;
   outline-style: inset;
   outline-width: 4px;

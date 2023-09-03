@@ -81,7 +81,7 @@
     width: 200px;
   }
 
-  & input {
+  & input, & select {
     background-color: white;
     width: 200px;
     height: 20px;
@@ -89,6 +89,20 @@
     border-radius: 10px;
     text-indent: 10px;
     font-size: 18px;
+  }
+
+  & select {
+    font-size: 16px;
+  }
+
+  & select option {
+    font-size: 16px;
+    text-align: center;
+    
+    &:hover {
+      background-color: gold;
+      color: black;
+    }
   }
 
   & #password {

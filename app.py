@@ -105,6 +105,55 @@ def change_settings():
         return jsonify({"success": True})
     except sqlite3.Error as e:
         return jsonify({"success": False, "message": "ERROR: " + e})
+
+@app.route('/add-connection', methods=['POST'])
+def add_connection():
+    data = request.get_json()
+    name = data.get('name')
+    type = data.get('type')
+    address = data.get('address')
+    username = data.get('username')
+    password = data.get('password')
+    if (type == 'mysql'):
+        status = save_connection()
+        if (status):
+            return jsonify({"success": True})
+        else: 
+            return jsonify({"success": False, "message": "ERROR: " + status})
+    
+    elif (type == 'postgres'):
+        return jsonify({"success": False, "message": "postgres"})
+    
+    elif (type == 'mariadb'):
+        return jsonify({"success": False, "message": "mariadb"})
+    return jsonify({"success": False, "message": "ERROR: Unknown type: " + type})
+    
+def check_connection(name, type, address, username, password):
+    if (type == 'mysql'):
+        status = 
+        if (status):
+            return save_connection(name, type, address, username, password)
+        else:
+            return status
+    elif (type == 'postgres'):
+        return save_connection(name, type, address, username, password)
+    elif (type == 'mariadb'):
+        return save_connection(name, type, address, username, password)
+    else:
+        return "Unknown type"
+    
+def save_connection(name, type, address, username, password):
+    try:
+        conn = sqlite3.connect('data.db')
+        cursor = conn.cursor()
+        cursor.execute('UPDATE settings SET value = ? WHERE setting = "dumps"', (dumps,))
+        conn.commit()
+        cursor.execute('UPDATE settings SET value = ? WHERE setting = "cron"', (cron,))
+        conn.commit()
+        conn.close()
+        return True
+    except sqlite3.Error as e:
+        return e
     
 if __name__ == '__main__':
     app.run()
